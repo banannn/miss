@@ -35,7 +35,7 @@ public class App {
 		pps2.add(new Property(4l, "qwe", 111.));
 		Product pr2 = new Product(2l, "FIAT", pps2);
 	
-		List<Product> pds = new ArrayList<>();
+		List<Product> pds = new ArrayList<Product>();
 		pds.add(pr);
 		pds.add(pr2);
 		

@@ -29,7 +29,7 @@ public class HumanBuyer extends Buyer {
 	@Override
 	public String getNextText() {
 		String response = scanner.nextLine();
-		System.out.println("buyer: next text" + response);
+		System.out.println("buyer: next text " + response);
 		return response;
 	}
 
