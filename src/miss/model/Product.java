@@ -1,5 +1,6 @@
 package miss.model;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -11,11 +12,13 @@ public class Product {
 
 	private Long id;
 	private String name;
-	private List<Property> properties;
-	
-	public Product(Long id, String name, List<Property> properties) {
+    private BigDecimal value;
+    private List<Property> properties;
+
+	public Product(Long id, String name, BigDecimal value, List<Property> properties) {
 		this.name = name;
 		this.id = id;
+        this.value = value;
 		this.properties = properties;
 	}
 	
@@ -34,12 +37,20 @@ public class Product {
 		this.id = id;
 	}
 
+    public BigDecimal getValue() {
+        return value;
+    }
+
+    public void setValue(BigDecimal value) {
+        this.value = value;
+    }
+
 	public List<Property> getProperties() {
 		return properties;
 	}
 
 	public void setProperties(List<Property> properties) {
 		this.properties = properties;
-	} 
-	
+	}
+
 }

@@ -1,13 +1,15 @@
 package miss.model;
 
 
+import java.math.BigDecimal;
+
 public class Property {
 
 	private Long id;
 	private String name;
-	private Double value; // ?
+	private BigDecimal value;
 	
-	public Property(Long id, String name, Double value) {
+	public Property(Long id, String name, BigDecimal value) {
 		this.name = name;
 		this.id = id;
 		this.value = value;
@@ -28,11 +30,11 @@ public class Property {
 		this.id = id;
 	}
 
-	public Double getValue() {
+	public BigDecimal getValue() {
 		return value;
 	}
 
-	public void setValue(Double value) {
+	public void setValue(BigDecimal value) {
 		this.value = value;
 	}
 	

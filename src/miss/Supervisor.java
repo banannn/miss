@@ -1,7 +1,6 @@
 package miss;
 
 import miss.buyer.Buyer;
-import miss.model.Product;
 import miss.seller.Seller;
 
 
@@ -19,8 +18,8 @@ public class Supervisor {
 	
 	public void startNegotiations() {
 		while(!buyer.negotiationEnds() && !seller.negotiationEnds() ) {
+            buyer.addResponse(seller.getNextText());
 			seller.addResponse(buyer.getNextText());
-			buyer.addResponse(seller.getNextText());
 		}
 	}
 	

@@ -7,7 +7,7 @@ public class HumanBuyer extends Buyer {
 
 	
 	private  Scanner scanner;
-	
+
 	public HumanBuyer() {
 		scanner = new Scanner(System.in);
 	}
@@ -29,7 +29,7 @@ public class HumanBuyer extends Buyer {
 	@Override
 	public String getNextText() {
 		String response = scanner.nextLine();
-		System.out.println("buyer: next text " + response);
+//		System.out.println("buyer: next text " + response);
 		return response;
 	}
 
