@@ -15,4 +15,6 @@ public interface IBotSellerLogic {
     Product findProductByName(String name, List<Product> products);
 
     Product findProductByValue(BigDecimal value, List<Product> products, IProductFinder productFinder);
+
+    Product findProductWithPropertiesByValue(BigDecimal value, List<Product> products, IProductWithPropertiesFinder productFinder);
 }

@@ -2,7 +2,10 @@ package miss.test;
 
 import miss.model.Product;
 import miss.model.Property;
-import miss.seller.*;
+import miss.seller.BotSellerLogic;
+import miss.seller.BotSellerTools;
+import miss.seller.IBotSellerLogic;
+import miss.seller.ProductFinder;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -21,10 +24,16 @@ import java.util.List;
 public class BotSellerTest {
 
     private IBotSellerLogic botSellerLogic = new BotSellerLogic();
-    private IProductFinder productFinder = new ProductFinder();
+    private ProductFinder productFinder = new ProductFinder();
 
-    private Product a = new Product(1l, "A", new BigDecimal("100"), new ArrayList<Property>());
-    private Product b = new Product(2l, "B", new BigDecimal("200"), new ArrayList<Property>());
+    private Property p1 = new Property(1l, "P1", new BigDecimal("50"));
+    private Property p2 = new Property(2l, "P2", new BigDecimal("80"));
+
+    private Product a = new Product(1l, "A", new BigDecimal("100"), Arrays.asList(p1, p2));
+    private Product b = new Product(2l, "B", new BigDecimal("200"), Arrays.asList(p1, p2));
+
+    private Product aBare = new Product(1l, "A", new BigDecimal("100"), new ArrayList<Property>());
+    private Product bBare = new Product(2l, "B", new BigDecimal("200"), new ArrayList<Property>());
 
     @DataProvider
     public Object[][] testJoinNamesDataProvider() {
@@ -100,6 +109,36 @@ public class BotSellerTest {
     @Test(dataProvider = "testProductFinderDataProvider")
     public void testProductFinder(BigDecimal value, Product bestMatch, Product product, boolean expected) {
         boolean result = productFinder.isBetter(value, bestMatch, product);
+        Assert.assertEquals(result, expected);
+    }
+
+    @DataProvider
+    public Object[][] testCalculateValueWithPropertiesDataProvider() {
+        return new Object[][]{
+                {aBare, new BigDecimal("100")},
+                {bBare, new BigDecimal("200")},
+                {a, new BigDecimal("230")},
+                {b, new BigDecimal("330")},
+        };
+    }
+
+    @Test(dataProvider = "testCalculateValueWithPropertiesDataProvider")
+    public void testCalculateValueWithProperties(Product product, BigDecimal expected) {
+        BigDecimal result = productFinder.calculateValueWithProperties(product);
+        Assert.assertEquals(result, expected);
+    }
+
+
+    @DataProvider
+    public Object[][] testProductWithPropertiesFinderDataProvider() {
+        return new Object[][]{
+            // TODO
+        };
+    }
+
+    @Test(dataProvider = "testProductWithPropertiesFinderDataProvider")
+    public void testProductWithPropertiesFinder(BigDecimal value, Product bestMatch, Product product, boolean expected) {
+        boolean result = productFinder.isBetterWithProperties(value, bestMatch, product);
         Assert.assertEquals(result, expected);
     }
 }
