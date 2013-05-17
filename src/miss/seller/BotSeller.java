@@ -1,13 +1,13 @@
 package miss.seller;
 
+import miss.model.Product;
+import miss.model.Property;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
-import miss.model.Product;
-import miss.model.Property;
 
 public class BotSeller extends Seller {
 
@@ -16,10 +16,10 @@ public class BotSeller extends Seller {
 	private static final int SELECT_PROPERTIES = 2;
 	private static final int NEGOTIATE_PRICE = 3;
 	private static final int OFFER_FROM_PRICE = 3;
-	
+
 	private boolean startOffer = true;
 	private List<Double> negotiationHistory;
-	
+
     private final IProductFinder productFinder = new ProductFinder();
     private final IBotSellerLogic botSellerLogic = new BotSellerLogic();
     private String[] defaultResponses;
@@ -30,7 +30,7 @@ public class BotSeller extends Seller {
     private BigDecimal value = null;
     private boolean negotiationEnds = false;
     private int mode = SELECT_PRODUCT;
-    
+
     @Override
     public void setProducts(List<Product> products) {
         super.setProducts(products);
@@ -54,7 +54,7 @@ public class BotSeller extends Seller {
     		negotiationEnds = true;
     		return;
     	}
-    		
+
     	if (mode == SELECT_PRODUCT) {
     		product = botSellerLogic.findProductByName(response, products);
     		mode = SELECT_PROPERTIES;
@@ -88,7 +88,7 @@ public class BotSeller extends Seller {
     			System.out.println("nie rozumiem..");
     		}
     	}
-    	
+
 //        response = response.trim().toUpperCase();
 //        if (product != null && value != null && response.equals("OK")) negotiationEnds = true;
 //        
@@ -131,11 +131,11 @@ public class BotSeller extends Seller {
 //        if (value == null)
 //            return defaultResponses[1];
 //        return "Oferta: " + product.getName() + " za " + value.toString() + ", potwierdź: OK";
-    	
+
     	return response;
     }
 
-    
+
     private String getPropertyAnswer() {
     	StringBuilder resp = new StringBuilder("Jakie dodatki chcesz? ");
     	int i =0;
@@ -144,14 +144,14 @@ public class BotSeller extends Seller {
     	}
     	return resp.toString();
     }
-    
+
     private String getNegotiateAnswer() {
     	Double price = product.getValue().doubleValue();
     	if (properties != null)
     	for (Integer i : properties) {
     		price += product.getProperties().get(i).getValue().doubleValue();
     	}
-    	
+
     	if (negotiationHistory.isEmpty()) {
     		// first offer
     		negotiationHistory.add(price*1.3);
@@ -166,8 +166,8 @@ public class BotSeller extends Seller {
     	}
     	negotiationEnds = true;
     	return "nie dogadamy sie..";
-    		
-    	
+
+
 //    	StringBuilder resp = new StringBuilder("Jakie dodatki chcesz? ");
 //    	int i =0;
 //    	for (Property p : product.getProperties()) {
@@ -175,7 +175,7 @@ public class BotSeller extends Seller {
 //    	}
 //    	return resp.toString();
     }
-    
+
     private Double analyzeHistory() {
     	if (negotiationHistory.size() <= 2)
     		return negotiationHistory.get(0) * 0.95;
