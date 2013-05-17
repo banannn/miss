@@ -1,27 +1,13 @@
 package miss.buyer;
 
+import miss.participant.Participant;
+
 /**
  * Base class for buyers
- * @author adam
  *
+ * @author adam
  */
-public abstract class Buyer {
+public abstract class Buyer implements Participant {
 
-	
-	/**
-	 * returns true if Buyer thinks that is end of negotiations
-	 */
-	public abstract boolean negotiationEnds();
 
-	/**
-	 * adds seller's response and changes state of Seller
-	 */
-	public abstract void addResponse(String response);
-	
-	/**
-	 * returns repsonse to buyer, and prints it in human readable form
-	 * @return
-	 */
-	public abstract String getNextText();
-	
 }

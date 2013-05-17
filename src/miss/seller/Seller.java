@@ -1,36 +1,21 @@
 package miss.seller;
 
+import miss.model.Product;
+import miss.participant.Participant;
+
 import java.util.List;
 
-import miss.model.Product;
+public abstract class Seller implements Participant {
 
-public abstract class Seller {
+    public List<Product> products;
 
-	public List<Product> products;
 
-	
-	public List<Product> getProducts() {
-		return products;
-	}
+    public List<Product> getProducts() {
+        return products;
+    }
 
-	public void setProducts(List<Product> products) {
-		this.products = products;
-	}
-	
-	/**
-	 * returns true if Seller thinks that is end of negotiations
-	 */
-	public abstract boolean negotiationEnds();
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
 
-	/**
-	 * adds buyer's response and changes state of Seller
-	 */
-	public abstract void addResponse(String response);
-	
-	/**
-	 * returns repsonse to buyer
-	 * @return
-	 */
-	public abstract String getNextText();
-	
 }
