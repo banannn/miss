@@ -4,8 +4,8 @@ import miss.participant.Participant;
 
 /**
  * Base class for buyers
- * @author adam
  *
+ * @author adam
  */
 public abstract class Buyer implements Participant {
 
