@@ -21,7 +21,7 @@ public class App {
 
     private static Participant getSeller() {
         try {
-            return ParticipantFactory.createBot(new File("resources", "messages.xml"));
+            return ParticipantFactory.createBot(new File("resources", "messages.xml"), null /* TODO XML z regułami */);
         } catch (JAXBException e) {
             e.printStackTrace();
             System.exit(-1);

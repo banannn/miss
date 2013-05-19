@@ -1,20 +1,23 @@
 package miss.participant;
 
 import miss.message.Message;
+import miss.message.Messages;
 import miss.message.OfferAccept;
-
-import java.util.Random;
+import miss.rule.Rules;
 
 public class Bot implements Participant {
 
-    private final Message[] messages;
+    private final Messages messages;
     private boolean negotiationEnds = false;
 
-    private Random random = new Random();
+    private Message received;
+    private Message sent;
+    private Rules rules;
 
 
-    public Bot(Message[] messages) {
+    public Bot(Messages messages, Rules rules) {
         this.messages = messages;
+        this.rules = rules;
     }
 
     @Override
@@ -24,12 +27,14 @@ public class Bot implements Participant {
 
     @Override
     public void addResponse(Message response) {
+        this.received = response;
         negotiationEnds = response instanceof OfferAccept;
     }
 
     @Override
     public Message getNextText() {
-        return messages[random.nextInt(messages.length)];
+        this.sent = rules.getNextMessage(sent, received);
+        return this.sent;
     }
 
 }
