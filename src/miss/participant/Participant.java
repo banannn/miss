@@ -1,5 +1,7 @@
 package miss.participant;
 
+import miss.message.Message;
+
 public interface Participant {
     /**
      * returns true if Participant thinks that is end of negotiations
@@ -9,11 +11,11 @@ public interface Participant {
     /**
      * adds buyer's response and changes state of Participant
      */
-    void addResponse(String response);
+    void addResponse(Message response);
 
     /**
      * returns repsonse
      * @return
      */
-    String getNextText();
+    Message getNextText();
 }
