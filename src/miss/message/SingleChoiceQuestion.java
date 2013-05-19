@@ -6,6 +6,9 @@ public class SingleChoiceQuestion extends ChoiceQuestion {
 
     public static final String WYBIERZ_JEDEN_ELEMENT_Z_LISTY = "Wybierz jeden element z listy: ";
 
+    private SingleChoiceQuestion(){
+    }
+
     public SingleChoiceQuestion(Long id, List<String> choices) {
         super(id, choices);
     }

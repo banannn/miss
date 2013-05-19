@@ -3,6 +3,9 @@ package miss;
 import miss.participant.Participant;
 import miss.participant.ParticipantFactory;
 
+import javax.xml.bind.JAXBException;
+import java.io.File;
+
 public class App {
 
     public static void main(String[] args) {
@@ -17,7 +20,13 @@ public class App {
     }
 
     private static Participant getSeller() {
-        return ParticipantFactory.createBot();
+        try {
+            return ParticipantFactory.createBot(new File("resources", "messages.xml"));
+        } catch (JAXBException e) {
+            e.printStackTrace();
+            System.exit(-1);
+            return null;
+        }
     }
 
 }

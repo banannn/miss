@@ -1,12 +1,18 @@
 package miss.message;
 
+import javax.xml.bind.annotation.XmlElement;
 import java.util.List;
 
 public abstract class ChoiceQuestion extends Question {
 
     public static final String COMMA_SPACE = ", ";
     public static final String DOT_SPACE = ". ";
+    @XmlElement
     protected final List<String> choices;
+
+    protected  ChoiceQuestion(){
+        choices = null;
+    }
 
     public ChoiceQuestion(Long id, List<String> choices) {
         super(id);

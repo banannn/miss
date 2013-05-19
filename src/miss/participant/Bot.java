@@ -1,6 +1,7 @@
 package miss.participant;
 
 import miss.message.Message;
+import miss.message.OfferAccept;
 
 import java.util.Random;
 
@@ -23,7 +24,7 @@ public class Bot implements Participant {
 
     @Override
     public void addResponse(Message response) {
-        //TODO
+        negotiationEnds = response instanceof OfferAccept;
     }
 
     @Override

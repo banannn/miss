@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<messages>
+    <message xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="singleChoiceQuestion">
+        <id>1</id>
+        <choices>BMW</choices>
+        <choices>FIAT</choices>
+    </message>
+    <message xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="multipleChoiceQuestion">
+        <id>2</id>
+        <choices>alufele</choices>
+        <choices>muryn w bagazniku</choices>
+    </message>
+    <message xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="multipleChoiceQuestion">
+        <id>3</id>
+        <choices>asd</choices>
+        <choices>qwe</choices>
+    </message>
+    <message xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="decimalQuestion">
+        <id>4</id>
+        <question>Jaka jest Twoja maksymalna cena?</question>
+    </message>
+    <message xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="offer">
+        <id>5</id>
+        <sum>2000</sum>
+    </message>
+    <message xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="offer">
+        <id>6</id>
+        <sum>5000</sum>
+    </message>
+</messages>

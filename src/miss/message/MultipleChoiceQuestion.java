@@ -6,6 +6,9 @@ public class MultipleChoiceQuestion extends ChoiceQuestion {
 
     public static final String WYBIERZ_WYBRANĄ_LICZBĘ_ELEMENTÓW_Z_LISTY_PODAJ_LICZBY_ODDZIELONE_PRZECINKAMI = "Wybierz wybraną liczbę elementów z listy (podaj liczby oddzielone przecinkami): ";
 
+    private MultipleChoiceQuestion(){
+    }
+
     public MultipleChoiceQuestion(Long id, List<String> choices) {
         super(id, choices);
     }

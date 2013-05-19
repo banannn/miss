@@ -6,7 +6,7 @@ public class DecimalAnswer extends Answer {
 
     private final BigDecimal answer;
 
-    DecimalAnswer(BigDecimal answer){
+    public DecimalAnswer(BigDecimal answer){
         this.answer = answer;
     }
 

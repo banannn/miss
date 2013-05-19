@@ -1,25 +1,23 @@
 package miss.participant;
 
-import miss.message.DecimalQuestion;
-import miss.message.Question;
-import miss.message.MultipleChoiceQuestion;
-import miss.message.SingleChoiceQuestion;
+import miss.message.Messages;
 
-import java.util.Arrays;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
+import java.io.File;
 
 public class ParticipantFactory {
-    public static Participant createBot() {
+    public static Participant createBot(File file) throws JAXBException {
 
-        long id = 0l;
+        Messages messages;
 
-        return new Bot(
-                new Question[]{
-                        new SingleChoiceQuestion(++id, Arrays.asList("BMW", "FIAT")),
-                        new MultipleChoiceQuestion(++id, Arrays.asList("alufele", "muryn w bagazniku")),
-                        new MultipleChoiceQuestion(++id, Arrays.asList("asd", "qwe")),
-                        new DecimalQuestion(++id, "Jaka jest Twoja maksymalna cena?"),
-                }
-        );
+        JAXBContext jaxbContext = JAXBContext.newInstance("miss.message");
+        Unmarshaller jaxbUnarshaller = jaxbContext.createUnmarshaller();
+
+        messages = (Messages) jaxbUnarshaller.unmarshal(file);
+
+        return new Bot(messages.getMessages());
 
     }
 
