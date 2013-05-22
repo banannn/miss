@@ -19,6 +19,9 @@ public class Rules {
     // wszystkie reguły
     private List<Rule> rules;
     
+    // wszystkie przejscia
+    private List<Transition> transitions;
+    
     public Rules(Messages messages) {
         this.messages = messages;
     }
@@ -55,6 +58,14 @@ public class Rules {
 
 	public void setRules(List<Rule> rules) {
 		this.rules = rules;
+	}
+
+	public List<Transition> getTransitions() {
+		return transitions;
+	}
+
+	public void setTransitions(List<Transition> transitions) {
+		this.transitions = transitions;
 	}
     
     
