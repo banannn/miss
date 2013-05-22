@@ -9,7 +9,7 @@ public class Transition {
 
 	private Long startState;
 	private Long endState;
-	private Long messageId;
+	private Verifier verifier;
 	
 	public Long getStartState() {
 		return startState;
@@ -24,5 +24,11 @@ public class Transition {
 		this.endState = endState;
 	}
 
-	
+    public Verifier getVerifier() {
+        return verifier;
+    }
+
+    public void setVerifier(Verifier verifier) {
+        this.verifier = verifier;
+    }
 }

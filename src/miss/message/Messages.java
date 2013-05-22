@@ -16,9 +16,9 @@ public class Messages {
     public void setMessages(Message[] messages) {
         this.messages = messages;
     }
-    
+
     public Message getMessageFromId(Long id) {
-    	//TODO
-    	return null;
+        for (Message message : messages) if (message.getId() == id) return message;
+        return null;
     }
 }

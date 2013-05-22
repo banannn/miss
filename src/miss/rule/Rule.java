@@ -1,7 +1,5 @@
 package miss.rule;
 
-import miss.message.Message;
-
 /**
  * określa jaka wiadomość ma być wysłana z konkretnego stanu
  * @author adam
@@ -10,7 +8,7 @@ import miss.message.Message;
 public class Rule {
 
 	private Long state;
-	private Message nextMessage;
+	private long nextMessage;
 	
 	public Long getState() {
 		return state;
@@ -18,6 +16,13 @@ public class Rule {
 	public void setState(Long state) {
 		this.state = state;
 	}
-	
 
+
+    public long getNextMessage() {
+        return nextMessage;
+    }
+
+    public void setNextMessage(long nextMessage) {
+        this.nextMessage = nextMessage;
+    }
 }

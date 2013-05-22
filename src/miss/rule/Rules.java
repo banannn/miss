@@ -1,10 +1,13 @@
 package miss.rule;
 
-import java.util.List;
-
 import miss.message.Message;
 import miss.message.Messages;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.util.List;
+
+@XmlRootElement
 // TODO - póki co jest wydmuszka zwracająca kolejno wiadomości
 public class Rules {
 //    private final Message[] messages;
@@ -21,9 +24,8 @@ public class Rules {
     
     // wszystkie przejscia
     private List<Transition> transitions;
-    
-    public Rules(Messages messages) {
-        this.messages = messages;
+
+    public Rules() {
     }
 
     public Message getNextMessage(Message sent, Message received) {
@@ -40,6 +42,7 @@ public class Rules {
 		return states;
 	}
 
+    @XmlElement(name = "state")
 	public void setStates(List<State> states) {
 		this.states = states;
 	}
@@ -56,7 +59,8 @@ public class Rules {
 		return rules;
 	}
 
-	public void setRules(List<Rule> rules) {
+    @XmlElement(name = "rule")
+    public void setRules(List<Rule> rules) {
 		this.rules = rules;
 	}
 
@@ -64,9 +68,9 @@ public class Rules {
 		return transitions;
 	}
 
-	public void setTransitions(List<Transition> transitions) {
+    @XmlElement(name = "transition")
+    public void setTransitions(List<Transition> transitions) {
 		this.transitions = transitions;
 	}
-    
-    
+
 }

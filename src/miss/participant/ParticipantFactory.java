@@ -11,14 +11,20 @@ import java.io.File;
 public class ParticipantFactory {
     public static Participant createBot(File messagesFile, File rulesFile) throws JAXBException {
 
-        Messages messages;
+        JAXBContext jaxbContext;
+        Unmarshaller jaxbUnmarshaller;
 
-        JAXBContext jaxbContext = JAXBContext.newInstance("miss.message");
-        Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+        jaxbContext = JAXBContext.newInstance("miss.message");
+        jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+        Messages messages = (Messages) jaxbUnmarshaller.unmarshal(messagesFile);
 
-        messages = (Messages) jaxbUnmarshaller.unmarshal(messagesFile);
+        jaxbContext = JAXBContext.newInstance("miss.rule");
+        jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+        Rules rules = (Rules) jaxbUnmarshaller.unmarshal(rulesFile);
 
-        return new Bot(messages, new Rules(messages) /* TODO wczytywanie XML-a z regułami */);
+        rules.setMessages(messages);
+
+        return new Bot(messages, rules);
 
     }
 

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<rules>
+    <rule>
+        <nextMessage>1</nextMessage>
+        <state>1</state>
+    </rule>
+    <rule>
+        <nextMessage>2</nextMessage>
+        <state>2</state>
+    </rule>
+    <rule>
+        <nextMessage>3</nextMessage>
+        <state>3</state>
+    </rule>
+    <rule>
+        <nextMessage>4</nextMessage>
+        <state>4</state>
+    </rule>
+    <rule>
+        <nextMessage>5</nextMessage>
+        <state>5</state>
+    </rule>
+    <rule>
+        <nextMessage>6</nextMessage>
+        <state>6</state>
+    </rule>
+    <state>
+        <id>1</id>
+    </state>
+    <state>
+        <id>2</id>
+    </state>
+    <state>
+        <id>3</id>
+    </state>
+    <state>
+        <id>4</id>
+    </state>
+    <state>
+        <id>5</id>
+    </state>
+    <state>
+        <id>6</id>
+    </state>
+    <transition>
+        <endState>2</endState>
+        <startState>1</startState>
+        <verifier xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="alwaysTrueVerifier"/>
+    </transition>
+    <transition>
+        <endState>3</endState>
+        <startState>2</startState>
+        <verifier xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="alwaysTrueVerifier"/>
+    </transition>
+    <transition>
+        <endState>4</endState>
+        <startState>3</startState>
+        <verifier xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="alwaysTrueVerifier"/>
+    </transition>
+    <transition>
+        <endState>5</endState>
+        <startState>4</startState>
+        <verifier xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="alwaysTrueVerifier"/>
+    </transition>
+    <transition>
+        <endState>6</endState>
+        <startState>5</startState>
+        <verifier xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="alwaysTrueVerifier"/>
+    </transition>
+    <transition>
+        <endState>1</endState>
+        <startState>6</startState>
+        <verifier xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="alwaysTrueVerifier"/>
+    </transition>
+</rules>
