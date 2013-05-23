@@ -2,20 +2,22 @@ package miss.rule;
 
 import javax.xml.bind.annotation.XmlElement;
 
+import miss.message.Message;
+
 public class IdEqualsVerifier extends Verifier {
-    @XmlElement
-    public void setMessageId(long messageId) {
-        this.messageId = messageId;
-    }
+//    @XmlElement
+//    public void setMessageId(long messageId) {
+//        this.messageId = messageId;
+//    }
+//
+//    public long getMessageId() {
+//        return messageId;
+//    }
 
-    public long getMessageId() {
-        return messageId;
-    }
-
-    private long messageId;
+    private Message messageId;
 
     @Override
-    public boolean isConsistent(long messageId) {
+    public boolean isConsistent(Message messageId) {
         return messageId == this.messageId;
     }
 }

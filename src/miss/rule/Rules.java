@@ -13,6 +13,8 @@ public class Rules {
 //    private final Message[] messages;
     private int next = -1;
 
+    private State state;
+    
     // mozliwe stany0
     private List<State> states;
 
@@ -26,9 +28,34 @@ public class Rules {
     private List<Transition> transitions;
 
     public Rules() {
+    	
     }
 
-    public Message getNextMessage(Message sent, Message received) {
+    public Message getNextMessage(Message received) {
+    	
+    	if (state == null || state.getId() == 1) {
+    		for (Transition trans : transitions ) {
+    			if (trans.getStartState() == 1) {
+    				state = getStateFromId(trans.getEndState());
+	    			for (Rule r : rules) {
+						if (1 == r.getState())
+							return messages.getMessageFromId(r.getNextMessage());
+					}
+    			}
+    		}
+    	} else {
+    		for (Transition trans : transitions ) {
+    			if (trans.getStartState() == state.getId()) {
+    				trans.getVerifier().isConsistent(received);
+    				state = getStateFromId(trans.getEndState());
+    				for (Rule r : rules) {
+    					if (state.getId() == r.getState())
+    						return messages.getMessageFromId(r.getNextMessage());
+    				}
+    			}
+    		}
+    	}
+    	
     	//TODO na podstawie stanu zwracac wiadomosc z Rule
     	
 //        next = (next + 1) % messages.length;
@@ -38,6 +65,14 @@ public class Rules {
     }
 
 
+    private State getStateFromId(Long id) {
+    	for (State state : states) {
+    		if (state.getId() == id)
+    			return state;
+    	}
+    	return null;
+    }
+    
 	public List<State> getStates() {
 		return states;
 	}
@@ -72,5 +107,9 @@ public class Rules {
     public void setTransitions(List<Transition> transitions) {
 		this.transitions = transitions;
 	}
+    
+    public State getFirstState() {
+    	return states.get(0);
+    }
 
 }

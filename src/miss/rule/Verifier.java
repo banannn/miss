@@ -1,7 +1,9 @@
 package miss.rule;
 
+import miss.message.Message;
+
 public abstract class Verifier {
 
-    abstract boolean isConsistent(long messageId);
+    abstract boolean isConsistent(Message messageId);
 
 }

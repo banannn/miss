@@ -1,8 +1,10 @@
 package miss.rule;
 
+import miss.message.Message;
+
 public class AlwaysTrueVerifier extends Verifier {
     @Override
-    public boolean isConsistent(long messageId) {
+    public boolean isConsistent(Message messageId) {
         return true;
     }
 }

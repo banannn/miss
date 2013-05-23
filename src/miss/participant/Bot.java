@@ -4,6 +4,7 @@ import miss.message.Message;
 import miss.message.Messages;
 import miss.message.OfferAccept;
 import miss.rule.Rules;
+import miss.rule.State;
 
 public class Bot implements Participant {
 
@@ -13,11 +14,13 @@ public class Bot implements Participant {
     private Message received;
     private Message sent;
     private Rules rules;
-
+    
+    private State state;
 
     public Bot(Messages messages, Rules rules) {
         this.messages = messages;
         this.rules = rules;
+        this.state = rules.getFirstState();
     }
 
     @Override
@@ -33,7 +36,7 @@ public class Bot implements Participant {
 
     @Override
     public Message getNextText() {
-        this.sent = rules.getNextMessage(sent, received);
+        this.sent = rules.getNextMessage(received);
         return this.sent;
     }
 
