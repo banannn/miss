@@ -4,6 +4,6 @@ import miss.message.Message;
 
 public abstract class Verifier {
 
-    abstract boolean isConsistent(Message messageId);
+    abstract boolean isConsistent(Message message);
 
 }

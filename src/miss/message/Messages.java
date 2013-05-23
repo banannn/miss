@@ -17,7 +17,7 @@ public class Messages {
         this.messages = messages;
     }
 
-    public Message getMessageFromId(Long id) {
+    public Message getMessageFromId(long id) {
         for (Message message : messages) if (message.getId() == id) return message;
         return null;
     }
