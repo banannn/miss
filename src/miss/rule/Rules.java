@@ -8,10 +8,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
 @XmlRootElement
-// TODO - póki co jest wydmuszka zwracająca kolejno wiadomości
 public class Rules {
-//    private final Message[] messages;
-    private int next = -1;
 
     private State state;
     
@@ -45,27 +42,24 @@ public class Rules {
     		}
     	} else {
     		for (Transition trans : transitions ) {
-    			if (trans.getStartState() == state.getId()) {
-    				trans.getVerifier().isConsistent(received);
+    			if (trans.getStartState().equals(state.getId()) &&
+                        trans.getVerifier().isConsistent(received)) {
     				state = getStateFromId(trans.getEndState());
     				for (Rule r : rules) {
-    					if (state.getId() == r.getState())
+    					if (state.getId().equals(r.getState()))
     						return messages.getMessageFromId(r.getNextMessage());
     				}
     			}
     		}
     	}
     	
-    	//TODO na podstawie stanu zwracac wiadomosc z Rule
-    	
-//        next = (next + 1) % messages.length;
+    	//TODO obsługa braku dopasowania
 
-//        return messages[next];
     	return messages.getMessages()[0];
     }
 
 
-    private State getStateFromId(Long id) {
+    private State getStateFromId(long id) {
     	for (State state : states) {
     		if (state.getId() == id)
     			return state;
