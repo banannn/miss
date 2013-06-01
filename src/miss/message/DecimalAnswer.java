@@ -10,4 +10,7 @@ public class DecimalAnswer extends Answer {
         this.answer = answer;
     }
 
+    public BigDecimal getAnswer() {
+        return answer;
+    }
 }

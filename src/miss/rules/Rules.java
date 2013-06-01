@@ -9,8 +9,6 @@ import java.util.List;
 
 @XmlRootElement
 public class Rules {
-//    private final Message[] messages;
-    private int next = -1;
 
     private State state;
     
@@ -70,13 +68,13 @@ public class Rules {
     	
     	
 //        next = (next + 1) % messages.length;
+    	//TODO obsługa braku dopasowania
 
-//        return messages[next];
     	return messages.getMessages()[0];
     }
 
 
-    private State getStateFromId(Long id) {
+    private State getStateFromId(long id) {
     	for (State state : states) {
     		if (state.getId() == id)
     			return state;
