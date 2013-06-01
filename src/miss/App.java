@@ -1,5 +1,6 @@
 package miss;
 
+import miss.parser.ParserFactory;
 import miss.participant.Participant;
 import miss.participant.ParticipantFactory;
 
@@ -22,8 +23,9 @@ public class App {
     private static Participant getSeller() {
         try {
             return ParticipantFactory.createBot(
-                    new File("resources", "messages.xml"),
-                    new File("resources", "rules.xml")
+                    "resources/messages.xml",
+                    "resources/rules.xml",
+                    ParserFactory.createXmlParser()
             );
         } catch (JAXBException e) {
             e.printStackTrace();

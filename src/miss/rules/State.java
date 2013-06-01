@@ -1,4 +1,4 @@
-package miss.rule;
+package miss.rules;
 
 public class State {
 

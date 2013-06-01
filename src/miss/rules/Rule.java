@@ -1,4 +1,4 @@
-package miss.rule;
+package miss.rules;
 
 /**
  * określa jaka wiadomość ma być wysłana z konkretnego stanu

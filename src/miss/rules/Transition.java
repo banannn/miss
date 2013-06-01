@@ -1,4 +1,5 @@
-package miss.rule;
+package miss.rules;
+
 
 /**
  * określa do jakiego stanu przechodzimy po otrzymaniu konkretnej wiadomości

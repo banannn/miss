@@ -3,8 +3,8 @@ package miss.participant;
 import miss.message.Message;
 import miss.message.Messages;
 import miss.message.OfferAccept;
-import miss.rule.Rules;
-import miss.rule.State;
+import miss.rules.Rules;
+import miss.rules.State;
 
 public class Bot implements Participant {
 

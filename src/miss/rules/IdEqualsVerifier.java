@@ -1,4 +1,4 @@
-package miss.rule;
+package miss.rules;
 
 import javax.xml.bind.annotation.XmlElement;
 
