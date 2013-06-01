@@ -12,6 +12,9 @@ public class GreaterThanOrEqualVerifier extends Verifier {
 
     @Override
     public boolean isConsistent(Message message) {
+    	System.out.println(value == null ? "null value" : "not null value");
+    	System.out.println(message == null ? "null message" : "not null message1" +
+    			"");
         return ((DecimalAnswer) message).getAnswer().compareTo(value) >= 0;
     }
 

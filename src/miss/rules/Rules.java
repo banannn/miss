@@ -29,12 +29,12 @@ public class Rules {
     }
 
     public Message getNextMessage(Message received) {
-    	
+    	System.out.println(received == null ? "rec null" : "rec not null");
     	long stateId = state == null ? 1l : state.getId();
 //    	System.out.println("stateid" + stateId);
     	for (Transition trans : transitions) {
 //    		System.out.println("trans " + trans.getStartState() + "-> " + trans.getEndState());
-    		if (trans.getStartState() == stateId) {
+    		if (trans.getStartState() == stateId && trans.getVerifier().isConsistent(received)) {
 //    			System.out.println("trans matched" + trans.getStartState() + "-> " + trans.getEndState());
     			state = getStateFromId(trans.getEndState());
     			for (Rule r : rules) {
