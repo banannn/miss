@@ -1,29 +1,19 @@
 package miss;
 
+import miss.message.*;
+import miss.parser.ParserFactory;
+import miss.participant.Participant;
+import miss.participant.ParticipantFactory;
+import miss.rules.*;
+import utils.JsonSerializer;
+
+import javax.xml.bind.JAXBException;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import javax.xml.bind.JAXBException;
-
-import miss.message.DecimalQuestion;
-import miss.message.Message;
-import miss.message.Messages;
-import miss.message.MultipleChoiceQuestion;
-import miss.message.Offer;
-import miss.message.SingleChoiceQuestion;
-import miss.parser.ParserFactory;
-import miss.participant.Participant;
-import miss.participant.ParticipantFactory;
-import miss.rules.AlwaysTrueVerifier;
-import miss.rules.Rule;
-import miss.rules.Rules;
-import miss.rules.State;
-import miss.rules.Transition;
-import utils.JsonSerializer;
 
 public class App {
 
@@ -67,9 +57,21 @@ public class App {
 		   r.setNextMessage(i);
 		   r.setState(i);
 		   rules.add(r);
+
+           if (i == 4) {
+               for (long[] vals : new long[][] { {6l, 5000l}, {5l, 2000l}}) {
+                   Transition t = new Transition();
+                   t.setEndState(vals[0]);
+                   t.setStartState(i);
+                   GreaterThanOrEqualVerifier verifier = new GreaterThanOrEqualVerifier();
+                   verifier.setValue(new BigDecimal(vals[1]));
+                   t.setVerifier(verifier);
+                   transitions.add(t);
+               }
+           }
 	   
 		   Transition t = new Transition();
-		   t.setEndState(i==6 ? 1l : i+1);
+		   t.setEndState(i >= 4 ? 1l : i+1);
 		   t.setStartState(i);
 		   t.setVerifier(new AlwaysTrueVerifier());
 		   transitions.add(t);
