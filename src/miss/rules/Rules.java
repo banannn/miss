@@ -31,24 +31,59 @@ public class Rules {
     public Message getNextMessage(Message received) {
     	System.out.println(received == null ? "rec null" : "rec not null");
     	long stateId = state == null ? 1l : state.getId();
-//    	System.out.println("stateid" + stateId);
-    	for (Transition trans : transitions) {
-//    		System.out.println("trans " + trans.getStartState() + "-> " + trans.getEndState());
-    		if (trans.getStartState() == stateId && trans.getVerifier().isConsistent(received)) {
-//    			System.out.println("trans matched" + trans.getStartState() + "-> " + trans.getEndState());
-    			state = getStateFromId(trans.getEndState());
-    			for (Rule r : rules) {
-//    				System.out.println("rule " + r.getState() + " " + r.getNextMessage());
-    				if (r.getState() == stateId) {
-        				System.out.println("rule matched" + r.getState() + " " + r.getNextMessage());
-        				
-        				Message m = messages.getMessageFromId(r.getNextMessage());
-        				System.out.println( m == null ? "null" : "not null");
-        				return m;
-    				}
-    			}
-    		}
+    	
+
+    	if (state == null) {
+    		state = getStateFromId(1l);
+    		for (Rule r : rules) {
+				if (r.getState() == state.getId()) {
+    				System.out.println("rule matched" + r.getState() + " " + r.getNextMessage());
+    				Message m = messages.getMessageFromId(r.getNextMessage());
+    				return m;
+				}
+			}
+    	} else {
+    		for (Transition trans : transitions) {
+//        		System.out.println("trans " + trans.getStartState() + "-> " + trans.getEndState());
+        		if (trans.getStartState() == stateId && trans.getVerifier().isConsistent(received)) {
+        			state = getStateFromId(trans.getEndState());
+        			System.out.println("state changed: " + state.getId());
+        			System.out.println("trans matched" + trans.getStartState() + "-> " + trans.getEndState());
+        			for (Rule r : rules) {
+//        				System.out.println("rule " + r.getState() + " " + r.getNextMessage());
+        				if (r.getState() == state.getId()) {
+            				System.out.println("rule matched" + r.getState() + " " + r.getNextMessage());
+            				
+            				Message m = messages.getMessageFromId(r.getNextMessage());
+//            				System.out.println( m == null ? "null" : "not null");
+            				
+            				return m;
+        				}
+        			}
+        		}
+        	}
     	}
+    	
+//    	System.out.println("stateid" + stateId);
+//    	for (Transition trans : transitions) {
+////    		System.out.println("trans " + trans.getStartState() + "-> " + trans.getEndState());
+//    		if (trans.getStartState() == stateId && trans.getVerifier().isConsistent(received)) {
+//    			state = getStateFromId(trans.getEndState());
+//    			System.out.println("state changed: " + state.getId());
+//    			System.out.println("trans matched" + trans.getStartState() + "-> " + trans.getEndState());
+//    			for (Rule r : rules) {
+////    				System.out.println("rule " + r.getState() + " " + r.getNextMessage());
+//    				if (r.getState() == state.getId()) {
+//        				System.out.println("rule matched" + r.getState() + " " + r.getNextMessage());
+//        				
+//        				Message m = messages.getMessageFromId(r.getNextMessage());
+////        				System.out.println( m == null ? "null" : "not null");
+//        				
+//        				return m;
+//    				}
+//    			}
+//    		}
+//    	}
     	
 //    	if (state == null || state.getId() == 1) {
 //    		for (Transition trans : transitions ) {
