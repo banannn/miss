@@ -58,26 +58,12 @@
         <verifier xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="alwaysTrueVerifier"/>
     </transition>
     <transition>
-        <endState>6</endState>
-        <startState>4</startState>
-        <verifier xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="greaterThanOrEqualVerifier">
-            <value>5000</value>
-        </verifier>
-    </transition>
-    <transition>
         <endState>5</endState>
-        <startState>4</startState>
-        <verifier xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="greaterThanOrEqualVerifier">
-            <value>2000</value>
-        </verifier>
-    </transition>
-    <transition>
-        <endState>1</endState>
         <startState>4</startState>
         <verifier xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="alwaysTrueVerifier"/>
     </transition>
     <transition>
-        <endState>1</endState>
+        <endState>6</endState>
         <startState>5</startState>
         <verifier xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="alwaysTrueVerifier"/>
     </transition>

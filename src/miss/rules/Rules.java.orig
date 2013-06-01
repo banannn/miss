@@ -30,26 +30,41 @@ public class Rules {
 
     public Message getNextMessage(Message received) {
     	
+<<<<<<< HEAD:src/miss/rules/Rules.java
     	long stateId = state == null ? 1l : state.getId();
-//    	System.out.println("stateid" + stateId);
+    	
     	for (Transition trans : transitions) {
-//    		System.out.println("trans " + trans.getStartState() + "-> " + trans.getEndState());
     		if (trans.getStartState() == stateId) {
-//    			System.out.println("trans matched" + trans.getStartState() + "-> " + trans.getEndState());
     			state = getStateFromId(trans.getEndState());
     			for (Rule r : rules) {
-//    				System.out.println("rule " + r.getState() + " " + r.getNextMessage());
-    				if (r.getState() == stateId) {
-        				System.out.println("rule matched" + r.getState() + " " + r.getNextMessage());
-        				
-        				Message m = messages.getMessageFromId(r.getNextMessage());
-        				System.out.println( m == null ? "null" : "not null");
-        				return m;
+    				if (state.getId() == stateId) {
+    					return messages.getMessageFromId(r.getNextMessage());
+=======
+    	if (state == null || state.getId() == 1) {
+    		for (Transition trans : transitions ) {
+    			if (trans.getStartState() == 1) {
+    				state = getStateFromId(trans.getEndState());
+	    			for (Rule r : rules) {
+						if (1 == r.getState())
+							return messages.getMessageFromId(r.getNextMessage());
+					}
+    			}
+    		}
+    	} else {
+    		for (Transition trans : transitions ) {
+    			if (trans.getStartState().equals(state.getId()) &&
+                        trans.getVerifier().isConsistent(received)) {
+    				state = getStateFromId(trans.getEndState());
+    				for (Rule r : rules) {
+    					if (state.getId().equals(r.getState()))
+    						return messages.getMessageFromId(r.getNextMessage());
+>>>>>>> e0199de4afb79ff52d73ad92755093cb43b15e6d:src/miss/rule/Rules.java
     				}
     			}
     		}
     	}
     	
+<<<<<<< HEAD:src/miss/rules/Rules.java
 //    	if (state == null || state.getId() == 1) {
 //    		for (Transition trans : transitions ) {
 //    			if (trans.getStartState() == 1) {
@@ -75,7 +90,9 @@ public class Rules {
     	
     	
 //        next = (next + 1) % messages.length;
+=======
     	//TODO obsługa braku dopasowania
+>>>>>>> e0199de4afb79ff52d73ad92755093cb43b15e6d:src/miss/rule/Rules.java
 
     	return messages.getMessages()[0];
     }
