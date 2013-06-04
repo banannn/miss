@@ -19,8 +19,8 @@
         {
             "type": "MultipleChoiceQuestion",
             "properties": {
-                "choices": ["qwe",
-                    "asd"],
+                "choices": ["Koła",
+                    "Kierownica"],
                 "id": 3
             }
         },
@@ -50,6 +50,48 @@
             "properties": {
                 "text": "Zrywam negocjacje",
                 "id": 7
+            }
+        },
+        {
+            "type": "Offer",
+            "properties": {
+                "sum": 6000,
+                "id": 8
+            }
+        },
+        {
+            "type": "Offer",
+            "properties": {
+                "sum": 5500,
+                "id": 9
+            }
+        },
+        {
+            "type": "Offer",
+            "properties": {
+                "sum": 6200,
+                "id": 10
+            }
+        },
+        {
+            "type": "Offer",
+            "properties": {
+                "sum": 3000,
+                "id": 11
+            }
+        },
+        {
+            "type": "Offer",
+            "properties": {
+                "sum": 2800,
+                "id": 12
+            }
+        },
+        {
+            "type": "Offer",
+            "properties": {
+                "sum": 3500,
+                "id": 13
             }
         }
     ]

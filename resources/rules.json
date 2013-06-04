@@ -20,6 +20,24 @@
         },
         {
             "id": 7
+        },
+        {
+            "id": 8
+        },
+        {
+            "id": 9
+        },
+        {
+            "id": 10
+        },
+        {
+            "id": 11
+        },
+        {
+            "id": 12
+        },
+        {
+            "id": 13
         }
     ],
     "rules": [
@@ -50,6 +68,30 @@
         {
             "state": 7,
             "nextMessage": 7
+        },
+        {
+            "state": 8,
+            "nextMessage": 8
+        },
+        {
+            "state": 9,
+            "nextMessage": 9
+        },
+        {
+            "state": 10,
+            "nextMessage": 10
+        },
+        {
+            "state": 11,
+            "nextMessage": 11
+        },
+        {
+            "state": 12,
+            "nextMessage": 12
+        },
+        {
+            "state": 13,
+            "nextMessage": 13
         }
     ],
     "transitions": [
@@ -75,7 +117,50 @@
         },
         {
             "startState": 2,
-            "endState": 4,
+            "endState": 10,
+            "verifier": {
+                "type": "AndVerifier",
+                "properties": {
+                     "verifiers": [
+                         {
+                             "type": "ContainsVerifier",
+                             "properties": {
+                                 "item": "Alufele"
+                             }
+                         },
+                         {
+                             "type": "ContainsVerifier",
+                             "properties": {
+                                 "item": "Radio"
+                             }
+                         }
+                     ]
+                }
+            }
+        },
+        {
+            "startState": 2,
+            "endState": 8,
+            "verifier": {
+                "type": "ContainsVerifier",
+                "properties": {
+                    "item": "Alufele"
+                }
+            }
+        },
+        {
+            "startState": 2,
+            "endState": 9,
+            "verifier": {
+                "type": "ContainsVerifier",
+                "properties": {
+                    "item": "Radio"
+                }
+            }
+        },
+        {
+            "startState": 2,
+            "endState": 6,
             "verifier": {
                 "type": "AlwaysTrueVerifier",
                 "properties": {
@@ -85,7 +170,50 @@
         },
         {
             "startState": 3,
-            "endState": 4,
+            "endState": 13,
+            "verifier": {
+                "type": "AndVerifier",
+                "properties": {
+                    "verifiers": [
+                        {
+                            "type": "ContainsVerifier",
+                            "properties": {
+                                "item": "Koła"
+                            }
+                        },
+                        {
+                            "type": "ContainsVerifier",
+                            "properties": {
+                                "item": "Kierownica"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "startState": 3,
+            "endState": 11,
+            "verifier": {
+                "type": "ContainsVerifier",
+                "properties": {
+                    "item": "Koła"
+                }
+            }
+        },
+        {
+            "startState": 3,
+            "endState": 12,
+            "verifier": {
+                "type": "ContainsVerifier",
+                "properties": {
+                    "item": "Kierownica"
+                }
+            }
+        },
+        {
+            "startState": 3,
+            "endState": 5,
             "verifier": {
                 "type": "AlwaysTrueVerifier",
                 "properties": {
@@ -110,36 +238,6 @@
                 "type": "GreaterThanOrEqualVerifier",
                 "properties": {
                     "value": 2000
-                }
-            }
-        },
-        {
-            "startState": 4,
-            "endState": 7,
-            "verifier": {
-                "type": "AlwaysTrueVerifier",
-                "properties": {
-
-                }
-            }
-        },
-        {
-            "startState": 5,
-            "endState": 7,
-            "verifier": {
-                "type": "AlwaysTrueVerifier",
-                "properties": {
-
-                }
-            }
-        },
-        {
-            "startState": 6,
-            "endState": 7,
-            "verifier": {
-                "type": "AlwaysTrueVerifier",
-                "properties": {
-
                 }
             }
         }
