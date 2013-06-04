@@ -93,6 +93,62 @@
                 "sum": 3500,
                 "id": 13
             }
+        },
+        {
+            "type": "Offer",
+            "properties": {
+                "sum": 1800,
+                "id": 14
+            }
+        },
+        {
+            "type": "Offer",
+            "properties": {
+                "sum": 4500,
+                "id": 15
+            }
+        },
+        {
+            "type": "Offer",
+            "properties": {
+                "sum": 5400,
+                "id": 16
+            }
+        },
+        {
+            "type": "Offer",
+            "properties": {
+                "sum": 4950,
+                "id": 17
+            }
+        },
+        {
+            "type": "Offer",
+            "properties": {
+                "sum": 5580,
+                "id": 18
+            }
+        },
+        {
+            "type": "Offer",
+            "properties": {
+                "sum": 2700,
+                "id": 19
+            }
+        },
+        {
+            "type": "Offer",
+            "properties": {
+                "sum": 2520,
+                "id": 20
+            }
+        },
+        {
+            "type": "Offer",
+            "properties": {
+                "sum": 3150,
+                "id": 21
+            }
         }
     ]
 }

@@ -10,9 +10,6 @@
             "id": 3
         },
         {
-            "id": 4
-        },
-        {
             "id": 5
         },
         {
@@ -38,6 +35,54 @@
         },
         {
             "id": 13
+        },
+        {
+            "id": 14
+        },
+        {
+            "id": 15
+        },
+        {
+            "id": 16
+        },
+        {
+            "id": 17
+        },
+        {
+            "id": 18
+        },
+        {
+            "id": 19
+        },
+        {
+            "id": 20
+        },
+        {
+            "id": 21
+        },
+        {
+            "id": 22
+        },
+        {
+            "id": 23
+        },
+        {
+            "id": 24
+        },
+        {
+            "id": 25
+        },
+        {
+            "id": 26
+        },
+        {
+            "id": 27
+        },
+        {
+            "id": 28
+        },
+        {
+            "id": 29
         }
     ],
     "rules": [
@@ -52,10 +97,6 @@
         {
             "state": 3,
             "nextMessage": 3
-        },
-        {
-            "state": 4,
-            "nextMessage": 4
         },
         {
             "state": 5,
@@ -92,6 +133,70 @@
         {
             "state": 13,
             "nextMessage": 13
+        },
+        {
+            "state": 14,
+            "nextMessage": 4
+        },
+        {
+            "state": 15,
+            "nextMessage": 4
+        },
+        {
+            "state": 16,
+            "nextMessage": 4
+        },
+        {
+            "state": 17,
+            "nextMessage": 4
+        },
+        {
+            "state": 18,
+            "nextMessage": 4
+        },
+        {
+            "state": 19,
+            "nextMessage": 4
+        },
+        {
+            "state": 20,
+            "nextMessage": 4
+        },
+        {
+            "state": 21,
+            "nextMessage": 4
+        },
+        {
+            "state": 22,
+            "nextMessage": 14
+        },
+        {
+            "state": 23,
+            "nextMessage": 15
+        },
+        {
+            "state": 24,
+            "nextMessage": 16
+        },
+        {
+            "state": 25,
+            "nextMessage": 17
+        },
+        {
+            "state": 26,
+            "nextMessage": 18
+        },
+        {
+            "state": 27,
+            "nextMessage": 19
+        },
+        {
+            "state": 28,
+            "nextMessage": 20
+        },
+        {
+            "state": 29,
+            "nextMessage": 21
         }
     ],
     "transitions": [
@@ -121,20 +226,20 @@
             "verifier": {
                 "type": "AndVerifier",
                 "properties": {
-                     "verifiers": [
-                         {
-                             "type": "ContainsVerifier",
-                             "properties": {
-                                 "item": "Alufele"
-                             }
-                         },
-                         {
-                             "type": "ContainsVerifier",
-                             "properties": {
-                                 "item": "Radio"
-                             }
-                         }
-                     ]
+                    "verifiers": [
+                        {
+                            "type": "ContainsVerifier",
+                            "properties": {
+                                "item": "Alufele"
+                            }
+                        },
+                        {
+                            "type": "ContainsVerifier",
+                            "properties": {
+                                "item": "Radio"
+                            }
+                        }
+                    ]
                 }
             }
         },
@@ -212,8 +317,8 @@
             }
         },
         {
-            "startState": 3,
-            "endState": 5,
+            "startState": 5,
+            "endState": 14,
             "verifier": {
                 "type": "AlwaysTrueVerifier",
                 "properties": {
@@ -222,22 +327,312 @@
             }
         },
         {
-            "startState": 4,
-            "endState": 6,
+            "startState": 6,
+            "endState": 15,
             "verifier": {
-                "type": "GreaterThanOrEqualVerifier",
+                "type": "AlwaysTrueVerifier",
                 "properties": {
-                    "value": 5000
+
                 }
             }
         },
         {
-            "startState": 4,
-            "endState": 5,
+            "startState": 8,
+            "endState": 16,
+            "verifier": {
+                "type": "AlwaysTrueVerifier",
+                "properties": {
+
+                }
+            }
+        },
+        {
+            "startState": 9,
+            "endState": 17,
+            "verifier": {
+                "type": "AlwaysTrueVerifier",
+                "properties": {
+
+                }
+            }
+        },
+        {
+            "startState": 10,
+            "endState": 18,
+            "verifier": {
+                "type": "AlwaysTrueVerifier",
+                "properties": {
+
+                }
+            }
+        },
+        {
+            "startState": 11,
+            "endState": 19,
+            "verifier": {
+                "type": "AlwaysTrueVerifier",
+                "properties": {
+
+                }
+            }
+        },
+        {
+            "startState": 12,
+            "endState": 20,
+            "verifier": {
+                "type": "AlwaysTrueVerifier",
+                "properties": {
+
+                }
+            }
+        },
+        {
+            "startState": 13,
+            "endState": 21,
+            "verifier": {
+                "type": "AlwaysTrueVerifier",
+                "properties": {
+
+                }
+            }
+        },
+        {
+            "startState": 14,
+            "endState": 22,
             "verifier": {
                 "type": "GreaterThanOrEqualVerifier",
                 "properties": {
-                    "value": 2000
+                    "value": 1600
+                }
+            }
+        },
+        {
+            "startState": 15,
+            "endState": 23,
+            "verifier": {
+                "type": "GreaterThanOrEqualVerifier",
+                "properties": {
+                    "value": 4000
+                }
+            }
+        },
+        {
+            "startState": 16,
+            "endState": 24,
+            "verifier": {
+                "type": "GreaterThanOrEqualVerifier",
+                "properties": {
+                    "value": 4800
+                }
+            }
+        },
+        {
+            "startState": 17,
+            "endState": 25,
+            "verifier": {
+                "type": "GreaterThanOrEqualVerifier",
+                "properties": {
+                    "value": 4400
+                }
+            }
+        },
+        {
+            "startState": 18,
+            "endState": 26,
+            "verifier": {
+                "type": "GreaterThanOrEqualVerifier",
+                "properties": {
+                    "value": 4960
+                }
+            }
+        },
+        {
+            "startState": 19,
+            "endState": 27,
+            "verifier": {
+                "type": "GreaterThanOrEqualVerifier",
+                "properties": {
+                    "value": 2400
+                }
+            }
+        },
+        {
+            "startState": 20,
+            "endState": 28,
+            "verifier": {
+                "type": "GreaterThanOrEqualVerifier",
+                "properties": {
+                    "value": 2240
+                }
+            }
+        },
+        {
+            "startState": 21,
+            "endState": 29,
+            "verifier": {
+                "type": "GreaterThanOrEqualVerifier",
+                "properties": {
+                    "value": 2800
+                }
+            }
+        },
+        {
+            "startState": 14,
+            "endState": 7,
+            "verifier": {
+                "type": "AlwaysTrueVerifier",
+                "properties": {
+
+                }
+            }
+        },
+        {
+            "startState": 15,
+            "endState": 7,
+            "verifier": {
+                "type": "AlwaysTrueVerifier",
+                "properties": {
+
+                }
+            }
+        },
+        {
+            "startState": 16,
+            "endState": 7,
+            "verifier": {
+                "type": "AlwaysTrueVerifier",
+                "properties": {
+
+                }
+            }
+        },
+        {
+            "startState": 17,
+            "endState": 7,
+            "verifier": {
+                "type": "AlwaysTrueVerifier",
+                "properties": {
+
+                }
+            }
+        },
+        {
+            "startState": 18,
+            "endState": 7,
+            "verifier": {
+                "type": "AlwaysTrueVerifier",
+                "properties": {
+
+                }
+            }
+        },
+        {
+            "startState": 19,
+            "endState": 7,
+            "verifier": {
+                "type": "AlwaysTrueVerifier",
+                "properties": {
+
+                }
+            }
+        },
+        {
+            "startState": 20,
+            "endState": 7,
+            "verifier": {
+                "type": "AlwaysTrueVerifier",
+                "properties": {
+
+                }
+            }
+        },
+        {
+            "startState": 21,
+            "endState": 7,
+            "verifier": {
+                "type": "AlwaysTrueVerifier",
+                "properties": {
+
+                }
+            }
+        },
+        {
+            "startState": 22,
+            "endState": 7,
+            "verifier": {
+                "type": "AlwaysTrueVerifier",
+                "properties": {
+
+                }
+            }
+        },
+        {
+            "startState": 23,
+            "endState": 7,
+            "verifier": {
+                "type": "AlwaysTrueVerifier",
+                "properties": {
+
+                }
+            }
+        },
+        {
+            "startState": 24,
+            "endState": 7,
+            "verifier": {
+                "type": "AlwaysTrueVerifier",
+                "properties": {
+
+                }
+            }
+        },
+        {
+            "startState": 25,
+            "endState": 7,
+            "verifier": {
+                "type": "AlwaysTrueVerifier",
+                "properties": {
+
+                }
+            }
+        },
+        {
+            "startState": 26,
+            "endState": 7,
+            "verifier": {
+                "type": "AlwaysTrueVerifier",
+                "properties": {
+
+                }
+            }
+        },
+        {
+            "startState": 27,
+            "endState": 7,
+            "verifier": {
+                "type": "AlwaysTrueVerifier",
+                "properties": {
+
+                }
+            }
+        },
+        {
+            "startState": 28,
+            "endState": 7,
+            "verifier": {
+                "type": "AlwaysTrueVerifier",
+                "properties": {
+
+                }
+            }
+        },
+        {
+            "startState": 29,
+            "endState": 7,
+            "verifier": {
+                "type": "AlwaysTrueVerifier",
+                "properties": {
+
                 }
             }
         }
