@@ -1,10 +1,17 @@
 package miss.message;
 
-public class MultipleChoiceAnswer extends Answer {
+import java.util.List;
 
-    private final String[] answer;
+public class MultipleChoiceAnswer extends ChoiceAnswer {
 
-    MultipleChoiceAnswer(String[] answer){
+    private final List<String> answer;
+
+    MultipleChoiceAnswer(List<String> answer){
         this.answer = answer;
+    }
+
+    @Override
+    public boolean contains(String item) {
+        return answer.contains(item);
     }
 }

@@ -22,7 +22,7 @@ public class MultipleChoiceQuestion extends ChoiceQuestion {
             int i = Integer.parseInt(s) - 1;
             answer.add(choices.get(i));
         }
-        return new MultipleChoiceAnswer(answer.toArray(new String[answer.size()]));
+        return new MultipleChoiceAnswer(answer);
     }
 
     @Override

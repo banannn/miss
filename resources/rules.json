@@ -64,8 +64,18 @@
             }
         },
         {
-            "startState": 2,
+            "startState": 1,
             "endState": 3,
+            "verifier": {
+                "type": "AlwaysTrueVerifier",
+                "properties": {
+
+                }
+            }
+        },
+        {
+            "startState": 2,
+            "endState": 4,
             "verifier": {
                 "type": "AlwaysTrueVerifier",
                 "properties": {
