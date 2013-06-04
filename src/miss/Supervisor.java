@@ -16,12 +16,17 @@ public class Supervisor {
 
 
 	public void startNegotiations() {
-		while(!participant2.negotiationEnds() && !participant1.negotiationEnds() ) {
+		for(;;) {
+            if(negotiationEnds()) return;
             participant2.addResponse(participant1.getNextText());
-			participant1.addResponse(participant2.getNextText());
+            if(negotiationEnds()) return;
+            participant1.addResponse(participant2.getNextText());
 		}
 	}
 
+    private boolean negotiationEnds() {
+        return participant2.negotiationEnds() || participant1.negotiationEnds();
+    }
 
 
 }

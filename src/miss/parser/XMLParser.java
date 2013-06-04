@@ -40,7 +40,7 @@ public class XMLParser implements Parser {
 			e.printStackTrace();
 		}
         
-        return new Bot(messages, rules);
+        return new Bot(rules);
 	}
 
 }

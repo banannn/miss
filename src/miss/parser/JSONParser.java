@@ -44,7 +44,7 @@ public class JSONParser implements Parser {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		return new Bot(msg, rules);
+		return new Bot(rules);
 	}
 	
 	

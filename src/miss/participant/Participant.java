@@ -2,20 +2,29 @@ package miss.participant;
 
 import miss.message.Message;
 
-public interface Participant {
+public abstract class Participant {
+    protected Message received;
+    private boolean negotiationEnds;
+
     /**
      * returns true if Participant thinks that is end of negotiations
      */
-    boolean negotiationEnds();
+    public boolean negotiationEnds() {
+        return negotiationEnds;
+    }
 
     /**
      * adds buyer's response and changes state of Participant
      */
-    void addResponse(Message response);
+    public void addResponse(Message response) {
+        this.received = response;
+        if (response != null && !negotiationEnds)
+            negotiationEnds = response.isFinal();
+    }
 
     /**
      * returns repsonse
      * @return
      */
-    Message getNextText();
+    public abstract Message getNextText();
 }

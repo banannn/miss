@@ -19,4 +19,8 @@ public abstract class Message {
     public Long getId() {
         return id;
     }
+
+    public boolean isFinal(){
+        return false;
+    }
 }

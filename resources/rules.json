@@ -1,124 +1,137 @@
 {
-	"states": [{
-		"id": 1
-	},
-	{
-		"id": 2
-	},
-	{
-		"id": 3
-	},
-	{
-		"id": 4
-	},
-	{
-		"id": 5
-	},
-	{
-		"id": 6
-	}],
-	"rules": [{
-		"state": 1,
-		"nextMessage": 1
-	},
-	{
-		"state": 2,
-		"nextMessage": 2
-	},
-	{
-		"state": 3,
-		"nextMessage": 3
-	},
-	{
-		"state": 4,
-		"nextMessage": 4
-	},
-	{
-		"state": 5,
-		"nextMessage": 5
-	},
-	{
-		"state": 6,
-		"nextMessage": 6
-	}],
-	"transitions": [{
-		"startState": 1,
-		"endState": 2,
-		"verifier": {
-			"type": "AlwaysTrueVerifier",
-			"properties": {
-				
-			}
-		}
-	},
-	{
-		"startState": 2,
-		"endState": 3,
-		"verifier": {
-			"type": "AlwaysTrueVerifier",
-			"properties": {
-				
-			}
-		}
-	},
-	{
-		"startState": 3,
-		"endState": 4,
-		"verifier": {
-			"type": "AlwaysTrueVerifier",
-			"properties": {
-				
-			}
-		}
-	},
-	{
-		"startState": 4,
-		"endState": 6,
-		"verifier": {
-			"type": "GreaterThanOrEqualVerifier",
-			"properties": {
-				"value": 5000
-			}
-		}
-	},
-	{
-		"startState": 4,
-		"endState": 5,
-		"verifier": {
-			"type": "GreaterThanOrEqualVerifier",
-			"properties": {
-				"value": 2000
-			}
-		}
-	},
-	{
-		"startState": 4,
-		"endState": 1,
-		"verifier": {
-			"type": "AlwaysTrueVerifier",
-			"properties": {
-				
-			}
-		}
-	},
-	{
-		"startState": 5,
-		"endState": 1,
-		"verifier": {
-			"type": "AlwaysTrueVerifier",
-			"properties": {
-				
-			}
-		}
-	},
-	{
-		"startState": 6,
-		"endState": 1,
-		"verifier": {
-			"type": "AlwaysTrueVerifier",
-			"properties": {
-				
-			}
-		}
-	}]
+    "states": [
+        {
+            "id": 1
+        },
+        {
+            "id": 2
+        },
+        {
+            "id": 3
+        },
+        {
+            "id": 4
+        },
+        {
+            "id": 5
+        },
+        {
+            "id": 6
+        },
+        {
+            "id": 7
+        }
+    ],
+    "rules": [
+        {
+            "state": 1,
+            "nextMessage": 1
+        },
+        {
+            "state": 2,
+            "nextMessage": 2
+        },
+        {
+            "state": 3,
+            "nextMessage": 3
+        },
+        {
+            "state": 4,
+            "nextMessage": 4
+        },
+        {
+            "state": 5,
+            "nextMessage": 5
+        },
+        {
+            "state": 6,
+            "nextMessage": 6
+        },
+        {
+            "state": 7,
+            "nextMessage": 7
+        }
+    ],
+    "transitions": [
+        {
+            "startState": 1,
+            "endState": 2,
+            "verifier": {
+                "type": "AlwaysTrueVerifier",
+                "properties": {
+
+                }
+            }
+        },
+        {
+            "startState": 2,
+            "endState": 3,
+            "verifier": {
+                "type": "AlwaysTrueVerifier",
+                "properties": {
+
+                }
+            }
+        },
+        {
+            "startState": 3,
+            "endState": 4,
+            "verifier": {
+                "type": "AlwaysTrueVerifier",
+                "properties": {
+
+                }
+            }
+        },
+        {
+            "startState": 4,
+            "endState": 6,
+            "verifier": {
+                "type": "GreaterThanOrEqualVerifier",
+                "properties": {
+                    "value": 5000
+                }
+            }
+        },
+        {
+            "startState": 4,
+            "endState": 5,
+            "verifier": {
+                "type": "GreaterThanOrEqualVerifier",
+                "properties": {
+                    "value": 2000
+                }
+            }
+        },
+        {
+            "startState": 4,
+            "endState": 7,
+            "verifier": {
+                "type": "AlwaysTrueVerifier",
+                "properties": {
+
+                }
+            }
+        },
+        {
+            "startState": 5,
+            "endState": 7,
+            "verifier": {
+                "type": "AlwaysTrueVerifier",
+                "properties": {
+
+                }
+            }
+        },
+        {
+            "startState": 6,
+            "endState": 7,
+            "verifier": {
+                "type": "AlwaysTrueVerifier",
+                "properties": {
+
+                }
+            }
+        }
+    ]
 }
