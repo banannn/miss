@@ -57,9 +57,9 @@
             "startState": 1,
             "endState": 2,
             "verifier": {
-                "type": "AlwaysTrueVerifier",
+                "type": "ContainsVerifier",
                 "properties": {
-
+                    "item": "BMW"
                 }
             }
         },
@@ -67,9 +67,9 @@
             "startState": 1,
             "endState": 3,
             "verifier": {
-                "type": "AlwaysTrueVerifier",
+                "type": "ContainsVerifier",
                 "properties": {
-
+                    "item": "FIAT"
                 }
             }
         },
