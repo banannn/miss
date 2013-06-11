@@ -2,6 +2,7 @@ package miss.rules;
 
 import miss.message.Message;
 import miss.message.Messages;
+import miss.solver.Solver;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -19,7 +20,7 @@ public class Rules {
     private Messages messages;
     
     // wszystkie reguły
-    private List<Rule> rules;
+    private List<Solver> solvers;
     
     // wszystkie przejscia
     private List<Transition> transitions;
@@ -35,7 +36,7 @@ public class Rules {
 
     	if (state == null) {
     		state = getStateFromId(1l);
-    		for (Rule r : rules) {
+    		for (Solver r : solvers) {
 				if (r.getState() == state.getId()) {
     				System.out.println("rule matched" + r.getState() + " " + r.getNextMessage());
     				Message m = messages.getMessageFromId(r.getNextMessage());
@@ -49,7 +50,7 @@ public class Rules {
         			state = getStateFromId(trans.getEndState());
         			System.out.println("state changed: " + state.getId());
         			System.out.println("trans matched" + trans.getStartState() + "-> " + trans.getEndState());
-        			for (Rule r : rules) {
+        			for (Solver r : solvers) {
 //        				System.out.println("rule " + r.getState() + " " + r.getNextMessage());
         				if (r.getState() == state.getId()) {
             				System.out.println("rule matched" + r.getState() + " " + r.getNextMessage());
@@ -71,7 +72,7 @@ public class Rules {
 //    			state = getStateFromId(trans.getEndState());
 //    			System.out.println("state changed: " + state.getId());
 //    			System.out.println("trans matched" + trans.getStartState() + "-> " + trans.getEndState());
-//    			for (Rule r : rules) {
+//    			for (Solver r : solvers) {
 ////    				System.out.println("rule " + r.getState() + " " + r.getNextMessage());
 //    				if (r.getState() == state.getId()) {
 //        				System.out.println("rule matched" + r.getState() + " " + r.getNextMessage());
@@ -89,7 +90,7 @@ public class Rules {
 //    		for (Transition trans : transitions ) {
 //    			if (trans.getStartState() == 1) {
 //    				state = getStateFromId(trans.getEndState());
-//	    			for (Rule r : rules) {
+//	    			for (Solver r : solvers) {
 //						if (1 == r.getState())
 //							return messages.getMessageFromId(r.getNextMessage());
 //					}
@@ -100,7 +101,7 @@ public class Rules {
 //    			if (trans.getStartState() == state.getId()) {
 //    				trans.getVerifier().isConsistent(received);
 //    				state = getStateFromId(trans.getEndState());
-//    				for (Rule r : rules) {
+//    				for (Solver r : solvers) {
 //    					if (state.getId() == r.getState())
 //    						return messages.getMessageFromId(r.getNextMessage());
 //    				}
@@ -141,13 +142,13 @@ public class Rules {
 		this.messages = messages;
 	}
 
-	public List<Rule> getRules() {
-		return rules;
+	public List<Solver> getSolvers() {
+		return solvers;
 	}
 
     @XmlElement(name = "rule")
-    public void setRules(List<Rule> rules) {
-		this.rules = rules;
+    public void setSolvers(List<Solver> solvers) {
+		this.solvers = solvers;
 	}
 
 	public List<Transition> getTransitions() {

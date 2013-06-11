@@ -1,21 +1,13 @@
-package miss.rules;
+package miss.solver;
 
 /**
  * określa jaka wiadomość ma być wysłana z konkretnego stanu
  * @author adam
  *
  */
-public class Rule {
+public class Constant extends Solver {
 
-	private Long state;
 	private long nextMessage;
-	
-	public Long getState() {
-		return state;
-	}
-	public void setState(Long state) {
-		this.state = state;
-	}
 
 
     public long getNextMessage() {

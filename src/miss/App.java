@@ -5,6 +5,8 @@ import miss.parser.ParserFactory;
 import miss.participant.Participant;
 import miss.participant.ParticipantFactory;
 import miss.rules.*;
+import miss.solver.Constant;
+import miss.solver.Solver;
 import utils.JsonSerializer;
 
 import javax.xml.bind.JAXBException;
@@ -45,7 +47,7 @@ public class App {
     
    private static void createJsons() {
 	   List<State> states = new ArrayList<State>();
-	   List<Rule> rules = new ArrayList<Rule>();
+	   List<Solver> solvers = new ArrayList<Solver>();
 	   List<Transition> transitions = new ArrayList<Transition>();
 	   
 	   for (long i=1; i<7; i++) {
@@ -53,10 +55,10 @@ public class App {
 		   s.setId(i);
 		   states.add(s);
 		   
-		   Rule r = new Rule();
+		   Constant r = new Constant();
 		   r.setNextMessage(i);
 		   r.setState(i);
-		   rules.add(r);
+		   solvers.add(r);
 
            if (i == 4) {
                for (long[] vals : new long[][] { {6l, 5000l}, {5l, 2000l}}) {
@@ -78,12 +80,12 @@ public class App {
 	   }
 	   
 	   Rules rr = new Rules();
-	   rr.setRules(rules);
+	   rr.setSolvers(solvers);
 	   rr.setStates(states);
 	   rr.setTransitions(transitions);
 	   PrintWriter out = null;
 	   try {
-			out = new PrintWriter("resources/rules.json");
+			out = new PrintWriter("resources/solvers.json");
 			out.print(JsonSerializer.toJson(rr));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<rules>
+<solvers>
     <rule>
         <nextMessage>1</nextMessage>
         <state>1</state>
@@ -72,4 +72,4 @@
         <startState>6</startState>
         <verifier xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="alwaysTrueVerifier"/>
     </transition>
-</rules>
+</solvers>

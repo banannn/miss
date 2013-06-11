@@ -85,118 +85,202 @@
             "id": 29
         }
     ],
-    "rules": [
+    "solvers": [
         {
-            "state": 1,
-            "nextMessage": 1
+            "type": "Constant",
+            "properties": {
+                "state": 1,
+                "nextMessage": 1
+            }
         },
         {
-            "state": 2,
-            "nextMessage": 2
+            "type": "Constant",
+            "properties": {
+                "state": 2,
+                "nextMessage": 2
+            }
         },
         {
-            "state": 3,
-            "nextMessage": 3
+            "type": "Constant",
+            "properties": {
+                "state": 3,
+                "nextMessage": 3
+            }
         },
         {
-            "state": 5,
-            "nextMessage": 5
+            "type": "Constant",
+            "properties": {
+                "state": 5,
+                "nextMessage": 5
+            }
         },
         {
-            "state": 6,
-            "nextMessage": 6
+            "type": "Constant",
+            "properties": {
+                "state": 6,
+                "nextMessage": 6
+            }
         },
         {
-            "state": 7,
-            "nextMessage": 7
+            "type": "Constant",
+            "properties": {
+                "state": 7,
+                "nextMessage": 7
+            }
         },
         {
-            "state": 8,
-            "nextMessage": 8
+            "type": "Constant",
+            "properties": {
+                "state": 8,
+                "nextMessage": 8
+            }
         },
         {
-            "state": 9,
-            "nextMessage": 9
+            "type": "Constant",
+            "properties": {
+                "state": 9,
+                "nextMessage": 9
+            }
         },
         {
-            "state": 10,
-            "nextMessage": 10
+            "type": "Constant",
+            "properties": {
+                "state": 10,
+                "nextMessage": 10
+            }
         },
         {
-            "state": 11,
-            "nextMessage": 11
+            "type": "Constant",
+            "properties": {
+                "state": 11,
+                "nextMessage": 11
+            }
         },
         {
-            "state": 12,
-            "nextMessage": 12
+            "type": "Constant",
+            "properties": {
+                "state": 12,
+                "nextMessage": 12
+            }
         },
         {
-            "state": 13,
-            "nextMessage": 13
+            "type": "Constant",
+            "properties": {
+                "state": 13,
+                "nextMessage": 13
+            }
         },
         {
-            "state": 14,
-            "nextMessage": 4
+            "type": "Constant",
+            "properties": {
+                "state": 14,
+                "nextMessage": 4
+            }
         },
         {
-            "state": 15,
-            "nextMessage": 4
+            "type": "Constant",
+            "properties": {
+                "state": 15,
+                "nextMessage": 4
+            }
         },
         {
-            "state": 16,
-            "nextMessage": 4
+            "type": "Constant",
+            "properties": {
+                "state": 16,
+                "nextMessage": 4
+            }
         },
         {
-            "state": 17,
-            "nextMessage": 4
+            "type": "Constant",
+            "properties": {
+                "state": 17,
+                "nextMessage": 4
+            }
         },
         {
-            "state": 18,
-            "nextMessage": 4
+            "type": "Constant",
+            "properties": {
+                "state": 18,
+                "nextMessage": 4
+            }
         },
         {
-            "state": 19,
-            "nextMessage": 4
+            "type": "Constant",
+            "properties": {
+                "state": 19,
+                "nextMessage": 4
+            }
         },
         {
-            "state": 20,
-            "nextMessage": 4
+            "type": "Constant",
+            "properties": {
+                "state": 20,
+                "nextMessage": 4
+            }
         },
         {
-            "state": 21,
-            "nextMessage": 4
+            "type": "Constant",
+            "properties": {
+                "state": 21,
+                "nextMessage": 4
+            }
         },
         {
-            "state": 22,
-            "nextMessage": 14
+            "type": "Constant",
+            "properties": {
+                "state": 22,
+                "nextMessage": 14
+            }
         },
         {
-            "state": 23,
-            "nextMessage": 15
+            "type": "Constant",
+            "properties": {
+                "state": 23,
+                "nextMessage": 15
+            }
         },
         {
-            "state": 24,
-            "nextMessage": 16
+            "type": "Constant",
+            "properties": {
+                "state": 24,
+                "nextMessage": 16
+            }
         },
         {
-            "state": 25,
-            "nextMessage": 17
+            "type": "Constant",
+            "properties": {
+                "state": 25,
+                "nextMessage": 17
+            }
         },
         {
-            "state": 26,
-            "nextMessage": 18
+            "type": "Constant",
+            "properties": {
+                "state": 26,
+                "nextMessage": 18
+            }
         },
         {
-            "state": 27,
-            "nextMessage": 19
+            "type": "Constant",
+            "properties": {
+                "state": 27,
+                "nextMessage": 19
+            }
         },
         {
-            "state": 28,
-            "nextMessage": 20
+            "type": "Constant",
+            "properties": {
+                "state": 28,
+                "nextMessage": 20
+            }
         },
         {
-            "state": 29,
-            "nextMessage": 21
+            "type": "Constant",
+            "properties": {
+                "state": 29,
+                "nextMessage": 21
+            }
         }
     ],
     "transitions": [

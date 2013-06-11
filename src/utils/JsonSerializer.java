@@ -1,11 +1,11 @@
 package utils;
 
+import com.google.gson.GsonBuilder;
 import miss.message.Message;
 import miss.message.Messages;
 import miss.rules.Rules;
 import miss.rules.Verifier;
-
-import com.google.gson.GsonBuilder;
+import miss.solver.Solver;
 
 public class JsonSerializer {
 
@@ -18,7 +18,8 @@ public class JsonSerializer {
 	public static String toJson(Rules rules) {
 		GsonBuilder builder = new GsonBuilder();
 		builder.registerTypeAdapter(Verifier.class, new VerifierElementAdapter());
-		return builder.create().toJson(rules, Rules.class);
+        builder.registerTypeAdapter(Solver.class, new SolverElementAdapter());
+        return builder.create().toJson(rules, Rules.class);
 	}
 	
 }
